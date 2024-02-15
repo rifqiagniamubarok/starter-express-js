@@ -22,8 +22,9 @@ sequelize
 const routes = require('./routes');
 app.use('/', routes);
 
+// Running
 // eslint-disable-next-line no-undef
-const port = process.env.PORT || 3560;
+const port = process.env.PORT || 3000;
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
 });
