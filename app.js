@@ -5,6 +5,7 @@ const { sequelize } = require('./models');
 
 // Middleware
 app.use(express.urlencoded({ extended: false }));
+// eslint-disable-next-line no-undef
 app.use(express.static(path.join(__dirname, 'public')));
 
 // Sequelize checking
@@ -21,8 +22,8 @@ sequelize
 const routes = require('./routes');
 app.use('/', routes);
 
-// Running
-const port = process.env.PORT || 3000;
+// eslint-disable-next-line no-undef
+const port = process.env.PORT || 3560;
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
 });
