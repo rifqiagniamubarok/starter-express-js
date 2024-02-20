@@ -1,3 +1,5 @@
+const Post = require('../../models/Post');
+
 const getExample = (req, res) => {
   res.json({ example: true });
 };
@@ -7,8 +9,19 @@ const getDetailExample = (req, res) => {
   res.json({ example: true, param });
 };
 
-const createExample = (req, res) => {
-  res.json({ example: true });
+const createExample = async (req, res) => {
+  try {
+    const post = new Post({
+      title: 'okok',
+      body: 'okok',
+    });
+
+    await post.save();
+
+    return res.json({ post });
+  } catch (error) {
+    return res.json({ error });
+  }
 };
 
 const editExample = (req, res) => {
